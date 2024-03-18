@@ -80,8 +80,12 @@ this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
 
 }
 window.addEventListener('scroll', scrollUp)
+
+
 /*================ SCROLL SECTIONS ACTIVE LINK ==================*/
 const sections = document.querySelectorAll('section[id')
+
+
 
 const scrollActive= () =>{
     const scrollDown = window.scrollY
@@ -113,9 +117,9 @@ const iconTheme = 'ri-sun-line'
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+// We obtain the current theme that the interface has by validating the dark-theme classdark
+const getCurrentTheme = () => 'dark' 
+const getCurrentIcon = () => 'ri-moon-line' 
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
@@ -143,6 +147,6 @@ const sr = ScrollReveal({
     // reset: true // Animations repeat
 })
 
-sr.reveal('.home__perfil, .about__image, .contact__mail',{origin:'right'})
-sr.reveal('.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data', {origin:'left'})
+sr.reveal('.home__perfil, .about__image,.skills-table, .contact__mail',{origin:'right'})
+sr.reveal('.home__name, .home__info, .about__container, .section__title-1,.skill-container, .about__info, .contact__social, .contact__data', {origin:'left'})
 sr.reveal('.services__card, .projects__card',{interval:800})

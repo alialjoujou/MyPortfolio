@@ -12,7 +12,60 @@
 
          <!--==================== CSS =====================-->
          <link rel="stylesheet" href="assets/css/styles.css">
-
+         <style>
+            .typing-circle {
+                position: absolute;
+                width: 0;
+                height: 0;
+                background-color: blue;
+                border-radius: 50%;
+                transition: width 0.5s, height 0.5s;
+            }
+    
+            /* Toggle switch styles */
+            .toggle-container {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+    
+            .toggle-input {
+                display: none;
+            }
+    
+            .toggle-slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .4s;
+                border-radius: 34px;
+            }
+    
+            .toggle-slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
+            }
+    
+            input:checked + .toggle-slider {
+                background-color: #2196F3;
+            }
+    
+            input:checked + .toggle-slider:before {
+                transform: translateX(26px);
+            }
+        </style>
          <title>Abdullah Al Joujou</title>
     </head>
     <body>
@@ -28,7 +81,7 @@
                 <div class="nav__menu" id="nav-menu">
                     <span class="nav__title">Menu</span>
 
-                    <h3 class="nav__name">AL Mouayad</h3>
+                    <h3 class="nav__name">Abdullah</h3>
 
                     <ul class="nav__list">
                         <li 
@@ -39,6 +92,11 @@
                         <li 
                         class="nav__item">
                             <a href="#about" class="nav__link">About Me</a>
+                        </li>
+
+                        <li 
+                        class="nav__item">
+                            <a href="#skills" class="nav__link">Skills</a>
                         </li>
 
                         <li 
@@ -68,6 +126,28 @@
                      </div>
                 </div>
             </nav>
+            <title>Typing Effect</title>
+            <style>
+              #text {
+                white-space: pre;
+                overflow: hidden;
+            
+                border-left: 4px solid hsla(0, 0%, 100%, 0);
+                animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+              }
+              
+              @keyframes blink-caret {
+    50% { border-color: transparent; } /* Make the caret invisible at 50% */
+}
+
+/* Apply blinking caret animation to text */
+#text {
+    border-right: 1px solid #ffffff00; /* Solid line simulating the caret */
+    animation: blink-caret 0.7s step-end infinite; /* Apply the animation infinitely */
+}
+    
+              
+            </style>
         </header>
 
           <!--==================== MAIN =====================-->
@@ -75,8 +155,9 @@
             <!--==================== HOME =================-->
             <section class="home section" id="home">
                 <div class="home__container container grid">
+                    
                     <h1 class="home__name">
-                        Abdullah   Al Joujou
+                        Hi I'am <span style="color: hsla(212, 89%, 61%, 0.687);   ">Abdullah</span>
                     </h1>
 
                     <div class="home__perfil">  
@@ -105,33 +186,88 @@
                             href="https://github.com/AbdullahAljojo"  target="_blank" class="home__social-link">
                             <i class="ri-github-line"></i>
                             </a>
+
                         </div>
                     </div>
 
                     <div class="home__info">
-                        <p class="home__description">
-                            <b>Fronend Developer</b>, with knowledge in web & App
-                            development and design, I offer the best
-                            projects resulting in quality work.
+                        <p class="home__description"  id="text">
+                            <b>  <div>
+                    <p id="text"></p>
+                    <div style="text-align: center; ">
+                        <a href="assets/img/cv/MyCv.pdf" class="download-button">Download CV</a>
+                    </div>
+                  </div></b>
                         </p>
 
-                        <a href="#about" class="home__scroll">
-                            <div class="home__scroll-box">
-                                <i class="ri-arrow-down-s-line"></i>
-                            </div>
-
-                            <span class="home__scroll-text">Scroll Down</span>
-                        </a>
+                       <!-- Scroll Down Button -->
+                    <a href="#about" class="home__scroll">
+                        <div class="home__scroll-box">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                        <!-- Change the text and add a line break -->
+                        <span class="home__scroll-text"><span style="color: hsla(212, 89%, 61%, 0.687);   ">welcome to my portfolio</span> <br> Scroll Down</span>
+                    </a>
 
                     </div>
                 </div>
+              
+                <script>
+                    var texts = [
+                        "  I'am information technology engineer",
+                        "  I'am artificial intelligence specialist",
+                        "  I'am frontend developer"
+                    ];
+                    var count = 0;
+                    var index = 6; // Start index after "I'm"
+                    var currentText = "  I'am ";
+                    var letter = "  I'am ";
+            
+                    function type() {
+                        if (count === texts.length) {
+                            count = 0; // Reset the count to start over
+                        }
+                        currentText = texts[count];
+                        letter = currentText.slice(0, ++index);
+            
+                        document.getElementById('text').textContent = letter;
+                        document.getElementById('text').textContent += '|';
+            
+                        if (letter.length === currentText.length) {
+                            setTimeout(deleteText, 500); // Wait for 1.5 seconds before deleting
+                        } else {
+                            setTimeout(type, 60); // Continue typing if the text is not fully displayed
+                        }
+                    }
+            
+                    function deleteText() {
+                        letter = currentText.slice(0, --index);
+            
+                        document.getElementById('text').textContent = letter;
+                        document.getElementById('text').textContent += '|';
+            
+                        if (index === 7) { // Reset to start after "I'm "
+                            setTimeout(function () {
+                                count++; // Increment the count after deleting
+                                index = 6; // Reset the index for the next text
+                                type(); // Call the type function recursively for the next text
+                            }, 500); // Wait for 0.5 seconds before typing the next sentence
+                        } else {
+                            setTimeout(deleteText, 60); // Continue deleting if the text is not fully cleared
+                        }
+                    }
+            
+                    type();
+                </script>
+                
             </section>
 
             <!--==================== ABOUT =================-->
             <section class="about section" id="about">
-                <div class="about__container container grid">
+                 <div class="about__container container grid">
                     <h2 class="section__title-1">
-                        <span> About Me.</span>
+                        
+                        <span> Overview  .</span>
                     </h2>
 
                     <div class="about__perfil">
@@ -148,14 +284,24 @@
 
                     <div class="about__info">
                         <p class="about__description">
-                            My name's <b>Abdullah Al Joujou</b>, I'm a <b>24 </b>years old, web & mobile app developer with <b>4 years </b>of experience. from <b>Syria</b> , and I'm passionate about creating stunning web pages and mobile applications with a focus on <b>UI/UX</b> design, I've had the privilege of working with numerous clients who have been delighted with the projects I've undertaken.
+                             <b>Abdullah Al Joujou</b>, from the countryside of Damascus, Information technology engineer, specializing in artificial intelligence, Fronend Developer  with 3 years of work experience using various techniques such as Flutter , Dart, React, Vue js, HTML, CSS . . .
                         </p>
 
                         <ul class="about__list">
                             <li class="about__item">
-                                <b>My Skills Are : </b> Flutter, Dart, HTML, CSS, Python, Java, ThreeJs, JavaScript,
-                                React, Flex , GIT, GITHUB, Adobe XD &
-                                Figma.
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i> Birthday: </b> 4 April 2000
+                            </li> 
+                              <li class="about__item">
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i>  Phone: </b>+963 992 373 318
+                            </li>
+                        </ul> 
+                        
+                        <ul class="about__list">
+                            <li class="about__item">
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i>  City:</b> Damascus, Syria
+                            </li> 
+                              <li class="about__item">
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i>  Freelance: </b> Available
                             </li>
                         </ul> 
 
@@ -185,44 +331,6 @@
                         <div class="services__content">
                             <div class="services__icon">
                                 <div class="services__box"></div>
-                                <i class="ri-layout-4-line"></i>
-                            </div>
-
-                            <h2 class="services__title">UI / UX Design</h2>
-
-                            <p class="services__description">
-                                Beautiful and elegant designs with
-                                interfaces that are intuitive, efficient
-                                and pleasant to use for the user.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="services__card">
-                        <div class="services__border"></div>
-
-                        <div class="services__content">
-                            <div class="services__icon">
-                                <div class="services__box"></div>
-                                <i class="ri-code-box-line"></i>
-                            </div>
-
-                            <h2 class="services__title">Development</h2>
-
-                            <p class="services__description">
-                                Custom app & web development tailored to your 
-                                specifications, designed to provide a 
-                                flawless user experience.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="services__card">
-                        <div class="services__border"></div>
-
-                        <div class="services__content">
-                            <div class="services__icon">
-                                <div class="services__box"></div>
                                 <i class="ri-smartphone-line"></i>
                             </div>
 
@@ -235,196 +343,153 @@
                             </p>
                         </div>
                     </article>
+                    <article class="services__card">
+                        <div class="services__border"></div>
+
+                        <div class="services__content">
+                            <div class="services__icon">
+                                <div class="services__box"></div>
+                                <i class="ri-code-box-line"></i>
+                            </div>
+
+                            <h2 class="services__title">Web Development</h2>
+
+                            <p class="services__description">
+                                Custom app & web development tailored to your 
+                                specifications, designed to provide a 
+                                flawless user experience.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="services__card">
+                        <div class="services__border"></div>
+
+                        <div class="services__content">
+                            <div class="services__icon">
+                                <div class="services__box"></div>
+                                <i class="ri-layout-4-line"></i>
+                            </div>
+
+                            <h2 class="services__title">UI / UX Design</h2>
+
+                            <p class="services__description">
+                                Beautiful and elegant designs with
+                                interfaces that are intuitive, efficient
+                                and pleasant to use for the user.
+                            </p>
+                        </div>
+                    </article>
+                  
                 </div>
                 
             </section>
 
              <!--==================== Skills =================-->
-             <section class="services section" id="services">
+             <section class="services section" id="skills">
                 <h2 class="section__title-2">
                     <span>Skills.</span>
                 </h2>
-            
-                <div class="services__container container grid">
+                <table class="skills-table">
 
-            <article class="services__card">
+                    <tr>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/dart.png" alt="Dart">
+                            <h2>Dart</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/flutter.png" alt="Flutter">
+                            <h2>Flutter</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/firebase.png" alt="Firebase">
+                            <h2>Firebase</h2>
+                        </td>
 
-                <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                    <div class="services__icon"style="margin-top: auto;">
-                        <img src="assets/img/skills/dart.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.5);margin-top: auto;">
-                    </div>
-                    <div class="services__box"></div>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/java.png" alt="Dart">
+                            <h2>java</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/js.png" alt="Dart">
+                            <h2>JavaScript</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/python.png" alt="Flutter">
+                            <h2>Python</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/github.png" alt="Firebase">
+                            <h2>GitHub</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/git.png" alt="Dart">
+                            <h2>Git</h2>
+                        </td>
+                        
+                    </tr>
+                </table>
+                <table class="skills-table">
+                    <tr>
+                        <td class="skill-item"> 
+                            <img src="assets/img/skills/cc.png" alt="Cc">
+                            <h2>C#</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/c.png" alt="C">
+                            <h2>C</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/c++.png" alt="C++">
+                            <h2>C++</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/html.png" alt="<HTML/>">
+                            <h2>&lt;HTML/&gt;</h2>
 
-                    <h2 class="services__title"style="margin-top: auto;">Dart</h2>
-
-                    <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                        Utilize Dart programming language for building applications with Flutter.                    </p>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/css.png" alt=".CSS{ }">
+                            <h2>.CSS{ }</h2>
+                        </td>
+                        
                     
+                        <td class="skill-item">
+                            <img src="assets/img/skills/figma.png" alt="Dart">
+                            <h2>Figma</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/xd.png" alt="Flutter">
+                            <h2> Adobe XD</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/ps.png" alt="Firebase">
+                            <h2>Photoshop</h2>
+                        </td>
+                    </tr>
+                      
+                </table>
+                
+                  
                 </div>
-             </article>
+            </section>
+            
 
-
-              <article class="services__card">
-
-                <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 0px">
-                    <div class="services__icon"style="margin-top: auto;">
-                        <img src="assets/img/skills/flutter.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.5);margin-top: auto;">
+            <section class="services section" id="other">
+                <div>
+                    <h2 style="text-align: center;font-size: 46px;padding-bottom: 10px;">
+                        <span>Other.</span>
+                    </h2>
+            
+                    <div class="skill-container">
+                        <div class="skill">Computer Vision</div>
+                        <div class="skill">MVC - HMVC - MTV</div>
+                        <div class="skill">Intelligent search algorithms</div>
+                        <div class="skill">Design patterns</div>
+                        <div class="skill">Architectural Patterns</div>
+                        <div class="skill">SOLID principles</div>
+                        <div class="skill">APIs handling</div>
+                        <div class="skill">Clean Code</div>
                     </div>
-                    <div class="services__box"></div>
-
-                    <h2 class="services__title"style="margin-top: auto;">Flutter</h2>
-
-                    <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                        Develop cross-platform mobile applications with Flutter.
-                    </p>
-                    
-                </div>
-             </article>
-                    <article class="services__card">            
-                        <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                            <div class="services__icon">
-                                <img src="assets/img/skills/firebase.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.7);margin-top: auto;">
-                            </div>
-                            <div class="services__box"></div>
-
-                            <h2 class="services__title">Firebase</h2>
-            
-                            <p class="services__description">
-                                Utilize Dart programming language for building applications with Flutter.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="services__card">
-
-                        <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                            <div class="services__icon"style="margin-top: auto;">
-                                <img src="assets/img/skills/java.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.5);margin-top: auto;">
-                            </div>
-                            <div class="services__box"></div>
-        
-                            <h2 class="services__title"style="margin-top: auto;">Java</h2>
-        
-                            <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                                Develop robust and scalable applications with Java.
-                                                </p>
-                            
-                        </div>
-                     </article>
-        
-        
-                      <article class="services__card">
-        
-                        <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 0px">
-                            <div class="services__icon"style="margin-top: auto;">
-                                <img src="assets/img/skills/js.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.4);margin-top: auto;">
-                            </div>
-                            <div class="services__box"></div>
-        
-                            <h2 class="services__title"style="margin-top: auto;">JavaScript</h2>
-        
-                            <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                                Build interactive and dynamic web applications with JavaScript.
-                            </p>
-                            
-                        </div>
-                     </article>
-                            <article class="services__card">            
-                                <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                                    <div class="services__icon">
-                                        <img src="assets/img/skills/python.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.5);margin-top: auto;">
-                                    </div>
-                                    <div class="services__box"></div>
-        
-                                    <h2 class="services__title">Python</h2>
-                    
-                                    <p class="services__description">
-                                        Develop versatile applications and scripts with Python.
-                                    </p>
-                                </div>
-                            </article>
-            
-                            <article class="services__card">
-
-                                <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                                    <div class="services__icon"style="margin-top: auto;">
-                                        <img src="assets/img/skills/github.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.5);margin-top: auto;">
-                                    </div>
-                                    <div class="services__box"></div>
-                
-                                    <h2 class="services__title"style="margin-top: auto;">GitHub
-                                    </h2>
-                
-                                    <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                                        Collaborate on and manage projects with GitHub.
-                                                        </p>
-                                    
-                                </div>
-                             </article>
-                
-                
-                              <article class="services__card">
-                
-                                <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 0px">
-                                    <div class="services__icon"style="margin-top: auto;">
-                                        <img src="assets/img/skills/git.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.4);margin-top: auto;">
-                                    </div>
-                                    <div class="services__box"></div>
-                
-                                    <h2 class="services__title"style="margin-top: auto;">Git</h2>
-                
-                                    <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                                        Version control and track changes with Git.
-                                    </p>
-                                    
-                                </div>
-                             </article>
-                                    <article class="services__card">            
-                                        <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                                            <div class="services__icon">
-                                                <img src="assets/img/skills/figma.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.4);margin-top: auto;">
-                                            </div>
-                                            <div class="services__box"></div>
-                
-                                            <h2 class="services__title">Figma</h2>
-                            
-                                            <p class="services__description">
-                                                Design intuitive and visually appealing user interfaces with Figma.
-                                            </p>
-                                        </div>
-                                    </article>
-
-                                    <article class="services__card">
-                
-                                        <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top: 20px">
-                                            <div class="services__icon"style="margin-top: auto;">
-                                                <img src="assets/img/skills/xd.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.4);margin-top: auto;">
-                                            </div>
-                                            <div class="services__box"></div>
-                        
-                                            <h2 class="services__title"style="margin-top: auto;"> Adobe XD</h2>
-                        
-                                            <p class="services__description" style="margin-top: 0; display: flex; align-items: center;">
-                                                Prototype and design interactive user experiences with Adobe XD.
-                                            </p>
-                                            
-                                        </div>
-                                     </article>
-                                            <article class="services__card">            
-                                                <div class="services__content" style="height: 90%; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;margin-top:0px">
-                                                    <div class="services__icon">
-                                                        <img src="assets/img/skills/ps.png" alt="Firebase Logo" class="services__img" style="transform: scale(0.4);margin-top: auto;">
-                                                    </div>
-                                                    <div class="services__box"></div>
-                        
-                                                    <h2 class="services__title"> Photoshop</h2>
-                                    
-                                                    <p class="services__description">
-                                                        Create stunning graphics and edit images with Photoshop.
-                                                    </p>
-                                                </div>
-                                            </article>
-           
-                   
                 </div>
             </section>
             
@@ -663,19 +728,18 @@
                                 <a href=" https://www.facebook.com/abdullah.aljojo.3" target="_blank" class="contact__social-link">
                                     <i class="ri-facebook-circle-line"></i>
                                 </a>
-
-                                <a href="https://www.instagram.com/abdullah_aljoujou/" target="_blank" class="contact__social-link">
-                                    <i class="ri-instagram-line"></i>
-                                </a>
-
-                                <a href=https://www.linkedin.com/in/abdullah-al-joujou-a24962185/" target="_blank" class="contact__social-link">
-                                    <i class="ri-linkedin-box-line"></i>
-                                </a>
-
                                 <a href="mailto:abdullahaljoujou@gmail.com" class="contact__social-link">
                                     <i class="ri-mail-line"></i>
                                 </a>
-                                
+                                <a href="tel:+96992373318" class="contact__social-link">
+                                    <i class="ri-phone-line"></i>
+                                </a>
+                                <a href="https://wa.me/+96992373318" class="contact__social-link">
+                                    <i class="ri-whatsapp-line"></i>
+                                </a>
+                                <a href="https://t.me/+96992373318" class="contact__social-link">
+                                    <i class="ri-telegram-line"></i>
+                                </a>
                                 
                             </div>
                         </div>                    
