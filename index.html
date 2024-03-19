@@ -66,14 +66,14 @@
                 transform: translateX(26px);
             }
         </style>
-         <title>Ali Al Joujou</title>
+         <title>Al Joujou</title>
     </head>
     <body>
         <!--==================== HEADER =====================-->
         <header class="header" id="header">
             <nav class="nav container">
                 <a href="#" class="nav__logo">
-                    <span class="nav__logo-circle">AD</span>
+                    <span class="nav__logo-circle">ALI</span>
                     <span class="nav__logo-name">AL Joujou</span>
                 </a>
 
@@ -101,7 +101,7 @@
 
                         <li 
                         class="nav__item">
-                            <a href="#projects" class="nav__link">Projects</a>
+                            <a href="#works" class="nav__link">Work</a>
                         </li>
 
                         <li 
@@ -155,9 +155,8 @@
             <!--==================== HOME =================-->
             <section class="home section" id="home">
                 <div class="home__container container grid">
-                    
                     <h1 class="home__name">
-                        Hi I'am <span style="color: hsla(212, 89%, 61%, 0.687);   ">Ali</span>
+                        Hi I'am <span style="color: hsla(47, 88%, 32%, 0.687);   ">Ali</span>
                     </h1>
 
                     <div class="home__perfil">  
@@ -170,96 +169,42 @@
 
                             <div class="geometric-box"></div>
                         </div>
-
+                      
                         <div class="home__social">
                             <a 
-                            href="https://www.instagram.com/abdullah_aljoujou/"  target="_blank" class="home__social-link">
+                            href="https://www.instagram.com/ali.m.aljojo/"  target="_blank" class="home__social-link">
                             <i class="ri-instagram-line"></i>
                             </a>
 
                             <a 
-                            href="https://www.linkedin.com/in/abdullah-al-joujou-a24962185/"  target="_blank" class="home__social-link">
-                            <i class="ri-linkedin-box-line"></i>
+                            href="https://www.facebook.com/ali.aljojo.395"  target="_blank" class="home__social-link">
+                            <i class="ri-facebook-box-line"></i>
                             </a>
 
                             <a 
-                            href="https://github.com/alialjoujou"  target="_blank" class="home__social-link">
-                            <i class="ri-github-line"></i>
+                            href="mailto:alialjoujou2@gmail.com"  target="_blank" class="home__social-link">
+                            <i class="ri-mail-line"></i>
                             </a>
-
                         </div>
                     </div>
 
                     <div class="home__info">
-                        <p class="home__description"  id="text">
-                            <b>  <div>
-                    <p id="text"></p>
+                        <p class="home__description">
+                          <b>Surveyor Engineer</b> passionate about precision and detail. With expertise in land measurement and mapping, I ensure accurate data for construction projects. Explore my work and projects to witness my dedication to excellence in surveying and engineering.
+                        </p>
                     <div style="text-align: center; ">
                         <a href="assets/img/cv/MyCvAli.pdf" class="download-button">Download CV</a>
                     </div>
-                  </div></b>
-                        </p> 
+                        <a href="#about" class="home__scroll" style="margin-left: 14%;">
+                            <div class="home__scroll-box">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
 
-                       <!-- Scroll Down Button -->
-                    <a href="#about" class="home__scroll">
-                        <div class="home__scroll-box">
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>
-                        <!-- Change the text and add a line break -->
-                        <span class="home__scroll-text"><span style="color: hsla(212, 89%, 61%, 0.687);   ">welcome to my portfolio</span> <br> Scroll Down</span>
-                    </a>
+                            <span class="home__scroll-text">Scroll Down</span>
+                        </a>
 
                     </div>
                 </div>
-              
-                <script>
-                    var texts = [
-                        "  I'am information technology engineer",
-                        "  I'am artificial intelligence specialist",
-                        "  I'am frontend developer"
-                    ];
-                    var count = 0;
-                    var index = 6; // Start index after "I'm"
-                    var currentText = "  I'am ";
-                    var letter = "  I'am ";
-            
-                    function type() {
-                        if (count === texts.length) {
-                            count = 0; // Reset the count to start over
-                        }
-                        currentText = texts[count];
-                        letter = currentText.slice(0, ++index);
-            
-                        document.getElementById('text').textContent = letter;
-                        document.getElementById('text').textContent += '|';
-            
-                        if (letter.length === currentText.length) {
-                            setTimeout(deleteText, 500); // Wait for 1.5 seconds before deleting
-                        } else {
-                            setTimeout(type, 60); // Continue typing if the text is not fully displayed
-                        }
-                    }
-            
-                    function deleteText() {
-                        letter = currentText.slice(0, --index);
-            
-                        document.getElementById('text').textContent = letter;
-                        document.getElementById('text').textContent += '|';
-            
-                        if (index === 7) { // Reset to start after "I'm "
-                            setTimeout(function () {
-                                count++; // Increment the count after deleting
-                                index = 6; // Reset the index for the next text
-                                type(); // Call the type function recursively for the next text
-                            }, 500); // Wait for 0.5 seconds before typing the next sentence
-                        } else {
-                            setTimeout(deleteText, 60); // Continue deleting if the text is not fully cleared
-                        }
-                    }
-            
-                    type();
-                </script>
-                
             </section>
 
             <!--==================== ABOUT =================-->
@@ -267,7 +212,7 @@
                  <div class="about__container container grid">
                     <h2 class="section__title-1">
                         
-                        <span> Overview  .</span>
+                        <span> About me  .</span>
                     </h2>
 
                     <div class="about__perfil">
@@ -284,24 +229,26 @@
 
                     <div class="about__info">
                         <p class="about__description">
-                             <b>Ali Al Joujou</b>, from the countryside of Damascus, Information technology engineer, specializing in artificial intelligence, Fronend Developer  with 3 years of work experience using various techniques such as Flutter , Dart, React, Vue js, HTML, CSS . . .
+                             <b>Ali Al Joujou</b>, from the countryside of Damascus,I hold a diploma in civil engineering, specializing in surveying. I have
+                             experience in signing and raising points to and from the surface of
+                             the earth, calculating levels, using various techniques such as AutoCAD and Civil 3D...
                         </p>
 
                         <ul class="about__list">
                             <li class="about__item">
-                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i> Birthday: </b> 4 April 2000
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(47, 88%, 32%, 0.687);"></i> Birthday: </b> 4 April 2002
                             </li> 
                               <li class="about__item">
-                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i>  Phone: </b>+963 992 373 318
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(47, 88%, 32%, 0.687);"></i>  Phone: </b>+963 994 498 230
                             </li>
                         </ul> 
                         
                         <ul class="about__list">
                             <li class="about__item">
-                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i>  City:</b> Damascus, Syria
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(47, 88%, 32%, 0.687);"></i>  City:</b> Damascus, Syria
                             </li> 
                               <li class="about__item">
-                                <b><i class="ri-arrow-right-s-line" style="color: hsla(212, 89%, 61%, 0.687);"></i>  Freelance: </b> Available
+                                <b><i class="ri-arrow-right-s-line" style="color: hsla(47, 88%, 32%, 0.687);"></i>  Degree: </b> Diploma in Civil Engineering
                             </li>
                         </ul> 
 
@@ -310,9 +257,13 @@
                                 <i class="ri-send-plane-line"> Contact Me</i>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/abdullah-al-joujou-a24962185/" target="_blank" class="button__ghost">
-                                <i class="ri-linkedin-box-line"></i>
+                            <a href="tel:+963994498230" target="_blank" class="button__ghost">
+                                <i class="ri-phone-line"></i>
                             </a>
+                            <a href="https://wa.me/+963994498230" target="_blank" class="button__ghost">
+                                <i class="ri-whatsapp-line"></i>
+                            </a>
+                           
                         </div>
                     </div>
                 </div>
@@ -389,81 +340,61 @@
                 <h2 class="section__title-2">
                     <span>Skills.</span>
                 </h2>
-                <table class="skills-table">
+                <table class="skills-table" style="align-self: center;padding-left: 12%;">
 
                     <tr>
                         <td class="skill-item">
-                            <img src="assets/img/skills/dart.png" alt="Dart">
-                            <h2>Dart</h2>
+                            <img src="assets/img/skills/AutoCAD.png" alt="AutoCAD">
+                            <h2>AutoCAD</h2>
                         </td>
                         <td class="skill-item">
-                            <img src="assets/img/skills/flutter.png" alt="Flutter">
-                            <h2>Flutter</h2>
+                            <img src="assets/img/skills/civil.png" alt="Civil 3D">
+                            <h2>Civil 3D</h2>
                         </td>
                         <td class="skill-item">
-                            <img src="assets/img/skills/firebase.png" alt="Firebase">
-                            <h2>Firebase</h2>
+                            <img src="assets/img/skills/point.png"  alt="Raise and sign points">
+                            <h2>Raise and <br>sign points</h2>
+                        </td>
+                        <td class="skill-item">
+                            <img src="assets/img/skills/accounting.png" alt="accounting">
+                            <h2>Accounting</h2>
                         </td>
 
                         <td class="skill-item">
-                            <img src="assets/img/skills/java.png" alt="Dart">
-                            <h2>java</h2>
+                            <img src="assets/img/skills/map.png" alt="map">
+                            <h2>Mapping</h2>
                         </td>
+                      
+                
                         <td class="skill-item">
-                            <img src="assets/img/skills/js.png" alt="Dart">
-                            <h2>JavaScript</h2>
-                        </td>
-                        <td class="skill-item">
-                            <img src="assets/img/skills/python.png" alt="Flutter">
-                            <h2>Python</h2>
-                        </td>
-                        <td class="skill-item">
-                            <img src="assets/img/skills/github.png" alt="Firebase">
-                            <h2>GitHub</h2>
-                        </td>
-                        <td class="skill-item">
-                            <img src="assets/img/skills/git.png" alt="Dart">
-                            <h2>Git</h2>
+                            <img src="assets/img/skills/Excel.png" alt="Excel">
+                            <h2>Excel</h2>
                         </td>
                         
                     </tr>
                 </table>
-                <table class="skills-table">
+                <table class="skills-table" style="align-self: center;padding-left: 15%;">
                     <tr>
                         <td class="skill-item"> 
-                            <img src="assets/img/skills/cc.png" alt="Cc">
-                            <h2>C#</h2>
+                            <img src="assets/img/skills/word.png" alt="Word">
+                            <h2>Word</h2>
                         </td>
                         <td class="skill-item">
-                            <img src="assets/img/skills/c.png" alt="C">
-                            <h2>C</h2>
+                            <img src="assets/img/skills/powerpoint.png" alt="PowerPoint">
+                            <h2>PowerPoint</h2>
                         </td>
                         <td class="skill-item">
-                            <img src="assets/img/skills/c++.png" alt="C++">
-                            <h2>C++</h2>
+                            <img src="assets/img/skills/photoshop.png" alt="Photoshop">
+                            <h2>Photoshop</h2>
                         </td>
-                        <td class="skill-item">
-                            <img src="assets/img/skills/html.png" alt="<HTML/>">
-                            <h2>&lt;HTML/&gt;</h2>
-
-                        </td>
-                        <td class="skill-item">
-                            <img src="assets/img/skills/css.png" alt=".CSS{ }">
-                            <h2>.CSS{ }</h2>
-                        </td>
-                        
                     
                         <td class="skill-item">
-                            <img src="assets/img/skills/figma.png" alt="Dart">
-                            <h2>Figma</h2>
+                            <img src="assets/img/skills/Negotiation.png" alt="Negotiation">
+                            <h2>Negotiation</h2>
                         </td>
                         <td class="skill-item">
-                            <img src="assets/img/skills/xd.png" alt="Flutter">
-                            <h2> Adobe XD</h2>
-                        </td>
-                        <td class="skill-item">
-                            <img src="assets/img/skills/ps.png" alt="Firebase">
-                            <h2>Photoshop</h2>
+                            <img src="assets/img/skills/Communication.png" alt="Communication">
+                            <h2>Communication</h2>
                         </td>
                     </tr>
                       
@@ -474,184 +405,38 @@
             </section>
             
 
-            <section class="services section" id="other">
-                <div>
-                    <h2 style="text-align: center;font-size: 46px;padding-bottom: 10px;">
-                        <span>Other.</span>
-                    </h2>
             
-                    <div class="skill-container">
-                        <div class="skill">Computer Vision</div>
-                        <div class="skill">MVC - HMVC - MTV</div>
-                        <div class="skill">Intelligent search algorithms</div>
-                        <div class="skill">Design patterns</div>
-                        <div class="skill">Architectural Patterns</div>
-                        <div class="skill">SOLID principles</div>
-                        <div class="skill">APIs handling</div>
-                        <div class="skill">Clean Code</div>
-                    </div>
-                </div>
-            </section>
             
-             <!--==================== PROJECTS =================-->
-            <section class="projects section" id="projects">
+             <!--==================== Works =================-->
+            <section class="projects section" id="works">
     <h2 class="section__title-1">
-        <span>Projects.</span>
+        <span>Work.</span>
     </h2>
+    <p class="home__description">
+        <b>Administrative Role (Ambulance Department) at Al-Fayhaa Hospital (2022 – 2023):</b> 
+      </p>
+      <li class="about__item" style="margin-bottom: 2%;text-align: center;">
+        passionate about precision and detail. With expertise in land measurement and mapping.
+    </li> 
+    <li class="about__item" style="margin-bottom: 8%;text-align: center;">
+        I ensure accurate data for construction projects. Explore my work and projects to witness my dedication to excellence in surveying and engineering.
+    </li>
+    <p class="home__description">
+        <b>Accountant at Al-Fayhaa Hospital (2023 - 2024):</b> 
+      </p>
+      <li class="about__item" style="margin-bottom: 2%;text-align: center;">
+        Managed customer interactions with professionalism and efficiency.
+    </li> 
+    <li class="about__item" style="margin-bottom: 8%;text-align: center;">
+        Handled employee relations with a focus on effective communication and problem-solving.
+    </li>
+    <p class="home__description">
+        <b>Receptionist (2023 – 2024):</b> 
+      </p>
 
-    <div class="projects__container container grid">
-        <article class="projects__card">
-            <div class="projects__image" style="position: relative;">
-                <a href="https://play.google.com/store/apps/details?id=com.wasena.app" class="projects__button button" style="position:  absolute; top: 200px;transform: scale(1.34);">
-                    <i class="ri-google-play-line"></i>
-                </a>
-                <img src="assets/img/wasena.png" alt="image" class="projects__img">
-            </div>
-            
-            <div class="projects__content">
-                            <h3 class="projects__subtitle">Delivary app</h3>
-                            <h2 class="projects__title">Wasena - وصينا </h2>
-
-                            <p class="projects__description">
-                                Bringing convenience to the Damascus countryside, 
-                                Wasena ensures swift and reliable delivery services. Seamlessly order, track,
-                                 and receive your packages with ease, catering to both residents and businesses alike. 
-                                Experience prompt delivery solutions tailored to your needs, all at your fingertips. 🚚📦
-                            </p>
-                        </div>
-
-                        <div class="projects__buttons">
-                            <a href="https://github.com/AbdullahAljojo/Wasena-App" target="_blank" class="projects__link">
-                                <i class="ri-github-line"></i>View
-                            </a>
-                            <a href="https://www.instagram.com/wasena.hon?igsh=OXl3NXk1cmtrMHlu" target="_blank" class="projects__link">
-                                <i class="ri-instagram-line"></i>Visit
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.wasena.app" target="_blank" class="projects__link">
-                                <i class="ri-google-play-line"></i>Google Play
-                            </a>
-                         
-                        </div>
-                      
-                    </article>
-
-                    <article class="projects__card">
-                        <div class="projects__image" style="position: relative;">
-                            <img src="assets/img/weather.jpg" alt="image" class="projects__img">
-
-                            <a href="#" class="projects__button button" style="position:  absolute; top: 155px;right: 10px;transform: scale(1.3);">
-                                <i class="ri-google-play-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects__content">
-                            <h3 class="projects__subtitle">Weather app task (Saudi Arabia)</h3>
-                            <h2 class="projects__title">Weather App</h2>
-
-                            <p class="projects__description">
-                                Experience real-time weather updates with WeatherApp. 
-                                This innovative online application provides comprehensive forecasts for five days, 
-                                ensuring you're always prepared for any conditions. With two user-friendly interfaces,
-                                 you can easily access detailed weather information and stay informed about upcoming forecasts. 
-                                 Don't let the weather catch you off guard - stay ahead with WeatherApp! 🌧☀
-                            </p>
-                        </div>
-
-                        <div class="projects__buttons">
-                            <a href="https://github.com/AbdullahAljojo/Weather-App" target="_blank" class="projects__link">
-                                <i class="ri-github-line"></i>View
-                            </a>
-                            <a href="https://sa.pioneers.network/" target="_blank" class="projects__link">
-                                <i class="ri-globe-line"></i>Visit 
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="projects__card">
-                        <div class="projects__image" style="position: relative;">
-                            <img src="assets/img/clinic.png" alt="image" class="projects__img">
-
-                            <a href="#" class="projects__button button" style="position:  absolute; top: 155px;right: 10px;transform: scale(1.3);">
-                                <i class="ri-google-play-line"></i>
-                            </a>
-                        </div>
-
-                        <div class="projects__content">
-                            <h3 class="projects__subtitle">Pioneer clinic reservation</h3>
-                            <h2 class="projects__title">PioneerClinic App</h2>
-                        
-                        <p class="projects__description">
-                            Revolutionizing healthcare in Damascus, our app facilitates seamless reservation and
-                             booking of appointments with doctors at Pioneer Clinic in Al3fef . 
-                             Utilizing Firebase for real-time chat functionality and state management with 
-                             Cubit in Flutter, users can easily schedule appointments, engage in consultations,
-                              and receive notifications powered by FCM Firebase. Experience the future of healthcare with PioneerClinic App!💉👩‍⚕️
-                        </p>
-
-                        </div>
-
-                        <div class="projects__buttons">
-                            <a href="https://github.com/AbdullahAljojo/PioneerClinic-App" target="_blank" class="projects__link">
-                                <i class="ri-github-line"></i>View
-                            </a>
-                            <a href="https://m.facebook.com/people/%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%AF-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D9%8A%D8%A9/100057079344884/?locale=es_LA" target="_blank" class="projects__link">
-                                <i class="ri-facebook-line"></i>Visit 
-                            </a>
-                        
-                        </div>
-                    </article>
-
-                    <article class="projects__card">
-                        <div class="projects__image">
-                            <img src="assets/img/devo.jpg" alt="image" class="projects__img">
-
-                        
-                        </div>
-
-                        <div class="projects__content">
-                            <h3 class="projects__subtitle">Workshop UI app</h3>
-                            <h2 class="projects__title">FlutterDevo</h2>
-
-                            <p class="projects__description">
-                                Converse effortlessly with FlutterDevo, 
-                                enjoying natural interactions, smart 
-                                responses, and instant engagement.
-                            </p>
-                        </div>
-
-                        <div class="projects__buttons">
-                            <a href="https://github.com/mdshwin555/ChatGPT" target="_blank" class="projects__link">
-                                <i class="ri-github-line"></i>View
-                            </a>
-                         
-                        </div>
-                    </article>
-
-                    <article class="projects__card">
-                        <div class="projects__image">
-                            <img src="assets/img/start.png" alt="image" class="projects__img">
-
-                        
-                        </div>
-
-                        <div class="projects__content">
-                            <h3 class="projects__subtitle">Parachute simulation (JavaScript) </h3>
-                            <h2 class="projects__title">Parachute-Adventure-simulation</h2>
-
-                            <p class="projects__description">
-                                Experience immersive adventures in the world of parachuting with Parachut in Three.js. Dive into thrilling simulations, 
-                                explore breathtaking landscapes, and feel the rush of adrenaline as you soar through the skies.
-                            </p>
-                        </div>
-
-                        <div class="projects__buttons">
-                            <a href="https://github.com/AbdullahAljojo/Parachute-Adventure-simulation" target="_blank" class="projects__link">
-                                <i class="ri-github-line"></i>View
-                            </a>
-                          
-                        </div>
-                    </article>
-                </div>
+    <li class="about__item" style="margin-bottom: 8%;text-align: center;">
+        Expanded duties to include reception responsibilities, demonstrating adaptability and versatility in the workplace.
+        </li>
              </section>
 
              <!--==================== CONTACT =================-->
@@ -663,14 +448,13 @@
                         </h2>
 
                         <p class="contact__description-1">
-                            I will read all email. send me any
+                             Send me any
                             messages you want and I'll get back to you.
                         </p>
 
                         <p class="contact__description-1">
-                            I need <b>Name</b> and <b>Email Address</b>, but
-                            you won't receive anything other than your reply.
-                        </p>
+                            Contact me for inquiries, collaborations, or just to say hello! 
+                            Your message matters and will be read promptly. Looking forward to hearing from you!</p>
 
                         <div class="geometric-box">
 
@@ -679,34 +463,12 @@
 
                     <div class="contact__mail">
                         <h2 class="contact__title">
-                            Send Me A Message
-                        </h2>
+                            Feel free to reach out to me for any inquiries, collaborations, or just to say hello!
+                            I make it a point to read every message I receive, so whether it's a question,
+                             feedback, or opportunity, your communication is valued and will be promptly responded to. Looking forward to hearing from you!                        </h2>
 
                         <form action="" class="contact__form" id="contact-form">
-                            <div class="contact__group">
-                                <div class="contact__box">
-                                    <input type="text" name="user_name" class="contact__input" id="name" required placeholder="First Name">
-                                    <label for="name" class="contact__label">First Name</label>
-                                </div>
-                                <div class="contact__box">
-                                    <input type="email" name="user_email" class="contact__input" id="email" required placeholder="Email Address">
-                                    <label for="email" class="contact__label">Email Address</label>
-                                </div>
-                            </div>
-                            <div class="contact__box">
-                                <input type="text" name="user_subject" class="contact__input" id="subject" required placeholder="Subject">
-                                <label for="subject" class="contact__label">Subject</label>
-                            </div>
-                            <div class="contact__box contact__area">
-                                <textarea name="user_message" id="message" class="contact__input" required placeholder="Messgae"></textarea>
-                                <label for="message" class="contact__label">Messgae</label>
-                            </div>
-
-
-                            <p class="contact__message" id="contact-message"></p>
-                           <button type="submit" class="contact__button button">
-                            <i class="ri-send-plane-line"></i> Send Message
-                           </button> 
+                            
                         </form>
                     </div>
 
@@ -725,19 +487,19 @@
                             </div>
                            
                             <div class="contact__social-links">
-                                <a href=" https://www.facebook.com/abdullah.aljojo.3" target="_blank" class="contact__social-link">
+                                <a href=" https://www.facebook.com/ali.aljojo.395" target="_blank" class="contact__social-link">
                                     <i class="ri-facebook-circle-line"></i>
                                 </a>
                                 <a href="mailto:alialjoujou2@gmail.com" class="contact__social-link">
                                     <i class="ri-mail-line"></i>
                                 </a>
-                                <a href="tel:+96992373318" class="contact__social-link">
+                                <a href="tel:+963994498230" class="contact__social-link">
                                     <i class="ri-phone-line"></i>
                                 </a>
-                                <a href="https://wa.me/+96992373318" class="contact__social-link">
+                                <a href="https://wa.me/+963994498230" class="contact__social-link">
                                     <i class="ri-whatsapp-line"></i>
                                 </a>
-                                <a href="https://t.me/+96992373318" class="contact__social-link">
+                                <a href="https://t.me/+963994498230" class="contact__social-link">
                                     <i class="ri-telegram-line"></i>
                                 </a>
                                 
@@ -749,19 +511,21 @@
           </main>
 
           <!--==================== FOOTER =====================-->
-          <footer class="footer">
+          <footer class="footer" style="padding-right: 12%;">
             <div class="footer__container container grid">
                 <ul class="footer__links">
                     <li>
-                        <a href="#about" class="footer__link">About</a>
+                        <a href="#about" class="footer__link">About Me</a>
                     </li>
 
                     <li>
                         <a href="#services" class="footer__link">Services</a>
                     </li>
-
                     <li>
-                        <a href="#projects" class="footer__link">Projects</a>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#works" class="footer__link">Work</a>
                     </li>
                 </ul>
 
