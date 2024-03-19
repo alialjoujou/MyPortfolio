@@ -788,11 +788,20 @@ font-size: 1.25rem;
     padding-top: 1rem;
 }
 
-
+@media (max-width: 768px) {
+    .skill-item img {
+        max-width: 190%; /* Ensure images do not exceed container width */
+        height: auto; 
+        font-size: 2px;
+    }
+}
 .services__card{
     position: relative;
 }
-
+.table-container {
+    overflow-x: auto; /* Add horizontal scroll on small screens if needed */
+    margin-bottom: 20px; /* Add some spacing between tables */
+}
 .services__content{
     height: 100%;
     background-color: var(--body-color);
